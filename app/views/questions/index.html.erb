@@ -1,7 +1,7 @@
 
 <%= flash[:alert] %>
 <br>
-<%= link_to "New Question", new_question_path %>
+<%= link_to "New Task", new_question_path %>
 <br>
 <br>
 
@@ -20,11 +20,11 @@
       <%= link_to "Delete", question, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
     <% if question.answers.any? %>
-      <h4>Answers</h4>
+      <h4>Comments</h4>
       <%= render question.answers %>
     <% end %>
     <br>
-    <p>Add Answer</p>
+    <p>Add Comments</p>
     <%= form_for([question, question.answers.build]) do |f| %>
       <%= f.text_area :content %>
       <%= submit_tag "Add" %>
